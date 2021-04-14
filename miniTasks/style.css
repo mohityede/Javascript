@@ -1,0 +1,53 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#main-contant {
+    width: 50vw;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    background-color: burlywood;
+    padding: 10px;
+}
+.section {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+/* Count click*/
+
+#box1 {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+#text-count {
+    margin: 10px;
+    font-size: 30px;
+}
+
+/* toggle mode*/
+
+#toggle {
+    width: 50px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: white;
+}
+#circle {
+    width: 16px;
+    height: 16px;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 8px;
+}

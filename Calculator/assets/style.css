@@ -1,0 +1,44 @@
+#cal-body{
+    width: min-content;
+    display: grid;
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: repeat(6,100px);
+    grid-gap: 5px;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: gray;
+}
+
+.box {
+    width: auto;
+    height: 100px;
+    background-color: wheat;
+    border: 1px solid black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.box:hover {
+    font-size: 50px;
+
+}
+.box:active, #key {
+    background-color: tomato;
+}
+.navy-bg {
+    background-color: rgb(209, 143, 67);
+}
+.box:first-child {
+    grid-column: 1/ span 4;
+    background-color: burlywood;
+    border-radius: 25px;
+}
+#num0 {
+    border-radius: 25px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}

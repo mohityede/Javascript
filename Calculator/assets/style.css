@@ -4,18 +4,17 @@
     grid-template-columns: repeat(4,100px);
     grid-template-rows: repeat(6,100px);
     grid-gap: 5px;
-    border: 2px solid black;
-    border-radius: 25px;
+    border: 5px solid rgb(46, 12, 12);
     padding: 10px;
-    background-color: gray;
+    background-color: rgb(241, 241, 241);
+    margin: 50px;
 }
 
-.box {
+.box, #sol {
     width: auto;
     height: 100px;
     background-color: wheat;
     border: 1px solid black;
-    border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,19 +25,20 @@
     font-size: 50px;
 
 }
-.box:active, #key {
+.box:active {
     background-color: tomato;
 }
 .navy-bg {
-    background-color: rgb(209, 143, 67);
+    background-color: rgb(125, 126, 124);
 }
-.box:first-child {
+#sol {
     grid-column: 1/ span 4;
-    background-color: burlywood;
-    border-radius: 25px;
+    background-color: rgb(121, 192, 107);
+    justify-content: flex-end;
+    padding-right: 10px;
 }
 #num0 {
-    border-radius: 25px;
     grid-column-start: 1;
     grid-column-end: 3;
 }
+

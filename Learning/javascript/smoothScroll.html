@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth scroll</title>
+    <style>
+        .col {
+            width: 80vw;
+            height: 80vh;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Smooth Scroll</h1>
+    <div class="nevbar">
+        <ul>
+            <li><a href="#red">Red</a></li>
+            <li><a href="#blu">Blu</a></li>
+            <li><a href="#grn">Grn</a></li>
+            <li><a href="#vio">Vio</a></li>
+            <li><a href="#blk">Blk</a></li>
+            <li><a href="#wht">Wht</a></li>
+            <li><a href="#pink">Pink</a></li>
+        </ul>
+    </div>
+    <li style="background-color: red;" class="col" id="red"></li>
+    <li style="background-color: blue;" class="col" id="blu"></li>
+    <li style="background-color: green;" class="col" id="grn"></li>
+    <li style="background-color: violet;" class="col" id="vio"></li>
+    <li style="background-color: black;" class="col" id="blk"></li>
+    <li style="background-color: whitesmoke;" class="col" id="wht"></li>
+    <li style="background-color: pink;" class="col" id="pink"></li>
+
+    <script>
+        let navAnchor = document.querySelectorAll('.nevbar a');
+
+        for (let i of navAnchor) {
+            i.addEventListener('click', function (event) {
+                event.preventDefault();
+                var targetSecID = this.textContent.trim().toLowerCase();
+                var targetSec = document.getElementById(targetSecID);
+
+                var interval = setInterval(function () {
+                    var targetCor = targetSec.getBoundingClientRect();
+                    if (targetCor.top <= 0) {
+                        clearInterval(interval);
+                        return;
+                    }
+                    window.scrollBy(0, 70);
+                }, 50);
+            })
+        }
+
+
+
+    </script>
+</body>
+
+</html>

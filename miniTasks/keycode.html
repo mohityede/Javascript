@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key code</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #keyNum,
+        #keyName {
+            width: 500px;
+            height: 500px;
+            font-size: 100px;
+            font-weight: bold;
+            background-color: black;
+            color: whitesmoke;
+            border: 2px solid yellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="keyName">press key for value</div>
+    <div id="keyNum"></div>
+    <script>
+        window.addEventListener('keydown', function (e) {
+            document.getElementById('keyNum').innerHTML = e.keyCode;
+            document.getElementById('keyName').innerHTML = e.key;
+        })
+    </script>
+</body>
+
+</html>

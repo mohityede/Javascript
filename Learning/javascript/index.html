@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javascript</title>
     <style>
-        #outerDiv{
+        #outerDiv {
             background-color: brown;
             width: 200px;
             height: 200px;
             border: 2px solid black;
         }
-        #innerDiv{
+
+        #innerDiv {
             background-color: green;
             width: 100px;
             height: 100px;
@@ -21,59 +23,23 @@
         }
     </style>
 </head>
+
 <body>
-    <h1 id="one">heading 1</h1>
+    <h1 id="one">Event Handling</h1>
     <h2>heading 2</h2>
     <p class="f">this is para</p>
     <p>this is also para</p>
-    <button id="btn" >hello</button>
+    <button id="btn">hello</button>
     <h2>mouse and keybourd event</h2>
-        <div id="eve" style=" margin: 50px;width: 100px; height: 100px; background-color: cadetblue;"></div>
-        <input type="text" name="search" id="search">
+    <div id="eve" style=" margin: 50px;width: 100px; height: 100px; background-color: cadetblue;"></div>
+    <input type="text" name="search" id="search">
 
     <h2>Propogation of event</h2>
     <div id="outerDiv">
         <div id="innerDiv"></div>
     </div>
 
-    <script>
-        var h= document.getElementById('btn');
-        h.addEventListener('click', function(){
-            h.style.fontSize = '23px';
-        })
-
-        var even = document.getElementById('eve');
-        even.addEventListener('mouseover', function(){
-            even.style.backgroundColor = 'red';
-        })
-        even.addEventListener('mouseout', function(){
-            even.style.backgroundColor = 'blue';
-        })
-
-        var ser = document.getElementById('search');
-        ser.addEventListener('keydown', function(event){
-            even.style.backgroundColor = 'gray';
-            if(event.keyCode== 66){
-                even.style.backgroundColor = 'black';
-            }
-        })
-
-        ser.addEventListener('keyup',function(){
-            even.style.backgroundColor = 'green';
-        })
-
-        var inr = document.getElementById('innerDiv');
-        var our = document.getElementById('outerDiv');
-        inr.addEventListener('click',function(ev){
-            console.log("inner clicked");
-            ev.stopPropagation();
-        })
-        our.addEventListener('click',function(){
-            console.log("outer clicked");
-        })
-        "use strict";
-
-
-    </script>
+    <script src="index.js"></script>
 </body>
+
 </html>

@@ -11,6 +11,13 @@ window.addEventListener('keydown',function(e){
 
 const k = document.querySelectorAll('.key');
 for(let i=0;i<k.length;i++){
+    // event when transition end:
+    k[i].addEventListener('transitionend',function(e){
+        if(e.propertyName !== 'transform') return;
+        console.log(this);
+        this.classList.remove('playing');
+    })
+    // event when user click :
     k[i].addEventListener('click',function(e){
         const audio = document.querySelector(`audio[data-key="${k[i].getAttribute('data-key')}"]`);
         const key = document.querySelector(`.key[data-key="${k[i].getAttribute('data-key')}"]`);
@@ -19,7 +26,6 @@ for(let i=0;i<k.length;i++){
         audio.currentTime = 0;
         audio.play();
         key.classList.add('playing');
-
     })
 }
 

@@ -72,3 +72,50 @@ Vahical.prototype.getPrice = function(){
 
 var v1 = new Vahical(4,50000);
 var v2 = new Vahical(2,20000);
+
+//Syntex to create empty object
+var obj1 = {}; // or
+var obj2 = new Object();
+
+// Class
+class Family {
+    constructor(man, woman, child1, child2){
+        this.man= man;
+        this.woman = woman;
+        this.child1 = child1;
+        this.child2 = child2;
+    }
+
+    getMan(){
+        console.log(this.man);
+    }
+}
+
+var yede = new Family("tilak","kamla","mohit","charu");
+var gouta = new Family("Ramesh","guddi","vihan","vira");
+
+// Inharitance using class
+class Vahicals {
+    constructor(brand,color,price){
+        this.brand = brand;
+        this.color = color;
+        this.price = price;
+    }
+    getColor(){
+        console.log("the color of vahical is ", this.color);
+    }
+}
+
+class Car extends Vahicals{
+    constructor(door,milage,price){
+        super("maruti","black",price); // to call properties of parent class
+        this.door = door;
+        this.milage = milage;
+    }
+    getCarDetails(){
+        console.log("the car brand is ",this.brand,"of price",this.price,"has milage of ", this.milage);
+    }
+}
+
+var c1 = new Car(4,23,100000);
+console.log(c1);

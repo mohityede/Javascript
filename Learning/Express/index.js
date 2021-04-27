@@ -2,24 +2,70 @@
 const express = require('express');
 const path = require('path');
 
-const port =8000;
+const port = 8000;
 
 const app = express();
 
-app.set('view engine','ejs');
-app.set('views',path.join(__dirname,'views'));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.urlencoded()); // middleware
 
+app.use(express.static('assets'));
 
-app.get('/',function(request,response){
-    // console.log(__dirname);
-    // response.send('its, runnig');
-    return response.render('home',{title : "My Contacts"});
+/*
+// creating middleware1
+app.use(function (req, res, next) {
+    req.name = "Rohit";
+    // console.log("middleware 1 is called.");
+    next();
+})
+// creating middleware2
+app.use(function (req, res, next) {
+    console.log("middleware 2 is name is ", req.name);
+    next();
 });
-app.get('/practice',function(request,response){
+*/
+
+
+// Contact project started
+var contactList = [
+    {
+        name: "Mohit",
+        phone: 9284973037,
+    },
+    {
+        name: "Sachin",
+        phone: 7289121590,
+    },
+    {
+        name: "Kamla",
+        phone: 8087077953,
+    }
+]
+
+
+// rout cotroller function
+app.get('/', function (request, response) {
+    console.log("form root ", request.name);
     // console.log(__dirname);
     // response.send('its, runnig');
-    return response.render('practice',{
-        title : "Practice EJS"
+    return response.render('home', {
+        title: "My Contacts",
+        contact_list: contactList,
+    });
+});
+
+app.post('/create-contact', function (request, response) {
+    // return response.redirect('practice');
+    contactList.push(request.body);
+    return response.redirect('/');
+})
+
+app.get('/practice', function (request, response) {
+    // console.log(__dirname);
+    // response.send('its, runnig');
+    return response.render('practice', {
+        title: "Practice EJS"
     });
 });
 // app.get('/error',function(req,res){
@@ -29,9 +75,9 @@ app.get('/practice',function(request,response){
 //     response.send('its, profile page');
 // });
 
-app.listen(port,function(err){
-    if(err) {
-        console.log("Error : ",err);
+app.listen(port, function (err) {
+    if (err) {
+        console.log("Error : ", err);
     }
     console.log("Express app run sucessfully.");
 });

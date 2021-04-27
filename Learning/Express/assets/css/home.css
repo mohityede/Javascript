@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    margin: 0px;
+}
+h1 {
+    background-color: burlywood;
+}
+#main-head {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    font-weight: 900;
+    background-color: white;
+    margin-bottom: 0px;
+}
+ul{
+    text-decoration: none;
+}
+li {
+    font-size: 25px;
+    background-color: rgb(60, 60, 156);
+    border: 2px solid black;
+    padding: 10px;
+    margin: 5px;
+    width: 500px;
+    list-style-type: none;
+    color: white;
+}
+li:hover{
+    background-color: rgb(53, 53, 53);
+}
+#phone{
+    float: right;
+}
+form input {
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    font-size: 20px;
+}
+form button {
+    background-color: gold;
+    padding: 8px;
+    border: 2px solid wheat;
+    border-radius: 5px;
+    font-size: 20px;
+}

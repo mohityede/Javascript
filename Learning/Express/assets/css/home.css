@@ -20,21 +20,21 @@ ul{
     text-decoration: none;
 }
 li {
+    display: flex;
+    justify-content: space-between;
     font-size: 25px;
     background-color: rgb(60, 60, 156);
     border: 2px solid black;
     padding: 10px;
     margin: 5px;
-    width: 500px;
+    width: 800px;
     list-style-type: none;
     color: white;
 }
 li:hover{
     background-color: rgb(53, 53, 53);
 }
-#phone{
-    float: right;
-}
+
 form input {
     border: none;
     border-bottom: 1px solid gray;
@@ -47,4 +47,12 @@ form button {
     border: 2px solid wheat;
     border-radius: 5px;
     font-size: 20px;
+}
+#delete {
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    padding: 10px;
+    border: 0px solid white;
+    border-radius: 10px;
 }

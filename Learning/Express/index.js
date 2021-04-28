@@ -55,10 +55,27 @@ app.get('/', function (request, response) {
     });
 });
 
+// controller to create contact
 app.post('/create-contact', function (request, response) {
     // return response.redirect('practice');
     contactList.push(request.body);
     return response.redirect('/');
+})
+
+// controller to delete contacts
+app.get('/delete-contact', function (req, res) {
+    console.log(req.query);
+    let contactIndex = req.query.index;
+
+    // OR find contactIndex....
+    // let phone = req.query.phone;
+    // let contactIndex = contactList.findIndex(contact => contact.phone == phone);
+
+    if (contactIndex != -1) {
+        contactList.splice(contactIndex, 1);
+    }
+
+    return res.redirect('back'); // back means same page..(/)
 })
 
 app.get('/practice', function (request, response) {

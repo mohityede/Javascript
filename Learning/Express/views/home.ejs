@@ -16,15 +16,21 @@
 
     <h1 id="main-head"> Contact List</h1>
     <ul>
-        <% for(let i of contact_list) {%>
+        <% for(let i=0;i<contact_list.length; i++) {%>
             <li>
                 <span id="name">
-                    <%= i.name %>
+                    <%= contact_list[i].name %>
                 </span>
-                <span id="phone">
-                    <%= i.phone%>
-                </span>
-
+                <div>
+                    <span id="phone">
+                        <%= contact_list[i].phone %>
+                    </span>
+                    <span>
+                        <a href="/delete-contact/?index=<%= i %>">
+                            <button id="delete">Delete</button>
+                        </a>
+                    </span>
+                </div>
             </li>
             <% } %>
     </ul>

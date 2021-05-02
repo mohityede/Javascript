@@ -1,0 +1,25 @@
+form {
+    text-align: center;
+    margin: 10px;
+    padding: 100px;
+    align-items: center;
+}
+form input{
+    margin: 5px;
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    padding: 3px;
+}
+form button{
+    font-size: x-large;
+    width: 400px;
+    height: 40px;
+    background-color: rgb(96, 182, 96);
+    font-weight: bolder;
+    border-radius: 5px;
+}
+form button:hover{
+    background-color: green;
+}

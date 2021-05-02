@@ -1,0 +1,38 @@
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+body{
+    background-color: rgb(243, 235, 235);
+}
+#search-head{
+    align-self: baseline;
+    margin-left: 12%;
+}
+#card {
+    background-color: white;
+    width: 75%;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid gray;
+}
+#card:hover{
+    box-shadow: 10px 10px rgb(192, 188, 188);
+}
+.card-img {
+    width: 250px;
+    height: 20rem;
+    border: 2px solid black;
+    margin: 10px;
+}
+.card-img img{
+    width: 100%;
+    height: 100%;
+}
+.card-body {
+    width: 66%;
+}

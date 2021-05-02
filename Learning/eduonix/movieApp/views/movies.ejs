@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>results</title>
+    <link rel="stylesheet" href="/css/movies.css">
+</head>
+<body>
+    <h2 id="search-head">Search Results for <%= q %> </h2>
+
+    <% data["results"].forEach((movie)=> { %>
+
+        <div id="card" class="center">
+            <div class="card-img">
+                <img src="https://www.themoviedb.org/t/p/w1280/<%= movie.poster_path %>" alt="movie title">
+            </div>
+            <div class="card-body">
+                <h2 class="card-title"><%= movie.title %></h2>
+                <hr>
+                <p class="card-summery"> <%= movie.overview %></p>
+                <hr>
+                <div class="other-details">
+                    <p><b>Date Published : </b><span><%= movie.release_date %></span> </p>
+                    <p><b>total votes : </b><span><%= movie.vote_count %></span></p>
+                    <p><b>average rating : </b><span><%= movie.vote_average %></span></p>
+                </div>
+            </div>
+        </div>
+
+    <% }) %>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Employee</title>
+    <link rel="stylesheet" href="/css/searchEmp.css">
+</head>
+<body>
+    <form action="/employee" method="GET">
+        <Label><h1>Search Employee</h1></Label>
+        <input type="text" name="name" id="emp-name" placeholder="Enter employee name"> <br>
+
+        <button type="submit">Search Employee</button>
+    </form>
+    <% if (semp) {%>
+    <div class="search-result">
+        <h2>Search Result:</h2>
+        <table style="width:100%">
+            <tr>
+              <th>Name</th>
+              <th>Designation</th>
+              <th>Salary</th>
+            </tr>
+            <tr>
+              <td><%= semp.name %></td>
+              <td><%= semp.designation %></td>
+              <td><%= semp.salary %></td>
+            </tr>
+
+          </table>
+    </div>
+    <% } %>
+</body>
+</html>

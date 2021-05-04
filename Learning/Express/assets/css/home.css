@@ -56,3 +56,6 @@ form button {
     border: 0px solid white;
     border-radius: 10px;
 }
+#delete:hover {
+    background-color: rgb(218, 148, 148);
+}

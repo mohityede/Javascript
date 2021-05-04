@@ -16,7 +16,7 @@
 
     <h1 id="main-head"> Contact List</h1>
     <ul>
-        <% for(let i=0;i<contact_list.length; i++) {%>
+        <% for(let i=0;i<contact_list.length; i++) { %>
             <li>
                 <span id="name">
                     <%= contact_list[i].name %>
@@ -26,7 +26,7 @@
                         <%= contact_list[i].phone %>
                     </span>
                     <span>
-                        <a href="/delete-contact/?index=<%= i %>">
+                        <a href="/delete-contact/?id=<%= contact_list[i].id %>">
                             <button id="delete">Delete</button>
                         </a>
                     </span>

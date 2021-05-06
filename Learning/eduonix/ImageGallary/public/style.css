@@ -1,0 +1,26 @@
+body{
+    text-align: center;
+    background-color: rgb(187, 184, 184);
+}
+.form-container {
+    margin: 50px 12% 0px 12%;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: blanchedalmond;
+}
+.img-container{
+    margin: 50px 12% 0px 12%;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: blanchedalmond;
+}
+
+.img-card {
+    width: 200px;
+    height: 300px;
+    background-color: white;
+}
+.img-card img{
+    width: 200px;
+    height: 200px;
+}

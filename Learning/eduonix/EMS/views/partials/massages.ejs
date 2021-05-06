@@ -1,0 +1,6 @@
+<link rel="stylesheet" href="/css/partial.css">
+<% if(sucess_msg && sucess_msg != ''){ %>
+    <div class="success-msg center"><%= sucess_msg %></div>
+<% }else if(error_msg && error_msg != ''){ %>
+    <div class="error-msg"><%= error_msg %></div>
+<% } %>

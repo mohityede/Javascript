@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee</title>
+    <link rel="stylesheet" href="/css/addEmp.css">
+</head>
+
+<body>
+    <form action="/employee/update/<%= uemp.id %>?_method=PUT" method="POST">
+        <Label>
+            <h1>Update Employee</h1>
+        </Label>
+
+        <input type="hidden" name="_method" value="PUT">
+
+        <input type="text" value="<%= uemp.name %>" name="name" id="emp-name" placeholder="Enter employee name"> <br>
+
+        <input type="text" value="<%= uemp.designation %>" name="designation" id="emp-desig"
+            placeholder="Enter employee designation"> <br>
+
+        <input type="number" value="<%= uemp.salary %>" name="salary" id="emp-sal" placeholder="Enter employee Salary">
+        <br>
+
+        <button type="submit">Update Employee</button>
+    </form>
+</body>

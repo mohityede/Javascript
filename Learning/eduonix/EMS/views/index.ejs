@@ -7,32 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="/css/index.css">
+
 </head>
+
 <body>
     <%- include('partials/nevbar.ejs') -%>
-    <div class="container">
-        <table style="width:100%">
-            <tr>
-                <th>Name</th>
-                <th>Designation</th>
-                <th>Salary</th>
-                <th>Operations</th>
-            </tr>
-            <% employ.forEach((emp) =>{ %>
+        <div class="container">
+            <%- include('partials/massages.ejs') -%>
+            <table style="width:100%">
                 <tr>
-                    <td><%= emp.name %></td>
-                    <td><%= emp.designation %></td>
-                    <td><%= emp.salary %></td>
-                    <td>
-                        <button class="but green-bg">Edit</button>
-                        <button class="but red-bg">Delete</button>
-                    </td>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Salary</th>
+                    <th>Operations</th>
                 </tr>
-            <% }) %>
+                <% employ.forEach((emp)=>{ %>
+                    <tr>
+                        <td>
+                            <%= emp.name %>
+                        </td>
+                        <td>
+                            <%= emp.designation %>
+                        </td>
+                        <td>
+                            <%= emp.salary %>
+                        </td>
+                        <td>
+                            <a href="/employee/update/<%= emp.id %>">
+                                <button class="but green-bg">Edit</button></a>
+                            <a href="/employee/delete/?id=<%= emp.id %>">
+                            <button class="but red-bg">Delete</button></a>
+                        </td>
+                    </tr>
+                    <% }) %>
 
 
-        </table>
-    </div>
+            </table>
+        </div>
 </body>
 
 </html>

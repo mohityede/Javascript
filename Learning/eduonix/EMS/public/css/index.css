@@ -2,24 +2,6 @@ body {
     background-color: rgb(230, 204, 199);
 }
 
-.nevbar {
-    background-color: rgb(148, 13, 13);
-    display: flex;
-    justify-content: space-between;
-}
-
-.links {
-    margin: 20px;
-}
-
-.logo h2,
-.links a {
-    margin: 20px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-}
-
 .links a:hover {
     text-decoration: underline;
 }

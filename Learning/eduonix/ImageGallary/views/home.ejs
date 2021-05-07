@@ -23,16 +23,21 @@
             <button type="submit">Upload Multiple Images</button>
         </form>
     </div>
+    <h1>All images</h1>
     <div class="img-container">
-        <h1>All images</h1>
-        <div class="img-card">
-            <img src="" alt="image">
-            <form action="/delete/<%=  %>?_method=DELETE" method="POST">
-                <input type="hidden" name="_method" value="DELETE">
-                <button type="submit">Delete</button>
-            </form>
-        </div>
+
+        <% imgs.forEach(img=>{ %>
+            <div class="img-card">
+                <img src="<%= img.imgUrl %>" alt="image">
+                <form action="/delete/<%= img.id %>?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        <% }) %>
+
     </div>
+
 </body>
 
 </html>

@@ -13,14 +13,18 @@ body{
     border: 1px solid black;
     padding: 20px;
     background-color: blanchedalmond;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .img-card {
     width: 200px;
     height: 300px;
     background-color: white;
+    margin: 10px;
 }
 .img-card img{
     width: 200px;
-    height: 200px;
+    height: 250px;
 }

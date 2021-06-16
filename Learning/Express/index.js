@@ -90,7 +90,7 @@ app.get('/delete-contact', function (req, res) {
     // if (contactIndex != -1) {
     //     contactList.splice(contactIndex, 1);
     // }
-    Contact.findByIdAndDelete(contactIndex,(err)=>{
+    Contact.findByIdAndDelete(contactIndex, (err) => {
         if(err){
             console.log("error in deleting data");
             return;

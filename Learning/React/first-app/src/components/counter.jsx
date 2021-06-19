@@ -2,18 +2,17 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
 
-
-    styles ={
-        fontSize : 15,
-        fontWeight: 'bold'
-    }
-
     render() {
         return (
-        <div>
-            <span style={this.styles} className={this.getBadgeClasses()} >{this.formatCount()}</span>
-            <button onClick={()=> this.props.onAddOne(this.props.counter)} className="btn btn-secondary btn-sm" >Increase</button>
-            <button onClick={()=> this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-2">Delete</button>
+        <div className="row w-50">
+            <div  className="col-2">
+                <span className={this.getBadgeClasses()} >{this.formatCount()}</span>
+            </div>
+            <div className="col">
+                <button onClick={()=> this.props.onAddOne(this.props.counter)} className="btn btn-secondary btn-sm m-2" >+</button>
+                <button disabled={this.props.counter.value<1} onClick={()=> this.props.onSubOne(this.props.counter)} className="btn btn-secondary btn-sm m-2" >-</button>
+                <button onClick={()=> this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-2">x</button>
+            </div>
         </div>
         );
     }

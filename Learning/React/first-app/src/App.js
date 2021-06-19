@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import React, { Component } from 'react';
 import './App.css';
-// import Movies from './components/movies'
+import Movies from './components/movies'
 import Counter2 from './components/counter2';
 import Navbar from './components/navbar';
 
@@ -35,6 +35,13 @@ class App extends Component {
       counters[index].value++;
       this.setState({counters});
   }
+  subOne = counter=>{
+    const counters = [...this.state.counters]
+    const index = counters.indexOf(counter)
+    counters[index] = {...counter}
+    counters[index].value--;
+    this.setState({counters});
+}
 
   render(){
     return(
@@ -46,8 +53,11 @@ class App extends Component {
           counters= {this.state.counters}
           handleDelete = {this.handleDelete}
           addOne = {this.addOne}
+          subOne = {this.subOne}
         ></Counter2>
-        {/* <Movies></Movies> */}
+        <br />
+        <hr />
+        <Movies></Movies>
       </main>
       </>
     );

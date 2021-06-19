@@ -4,11 +4,12 @@ import Counter from './counter'
 class Counter2 extends Component {
 
     render() {
+        // Destructring argument
+        const { handleReset, counters, handleDelete, addOne, subOne } = this.props;
         return (
         <div>
-            <button onClick={this.props.handleReset} className="btn btn-sm btn-warning m-2">Reset</button>
-            {this.props.counters.map(c=><Counter key={c.id} onDelete={this.props.handleDelete} onAddOne={this.props.addOne} counter={c}>
-
+            <button onClick={handleReset} className="btn btn-sm btn-warning m-2">Reset</button>
+            {counters.map(c=><Counter key={c.id} onDelete={handleDelete} onAddOne={addOne} onSubOne={subOne} counter={c}>
             </Counter>)}
         </div>
         );

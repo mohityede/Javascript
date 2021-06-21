@@ -1,5 +1,6 @@
 // import React, {Component} from 'react';
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Like from './common/like';
 import Table from './common/table';
 
@@ -7,7 +8,9 @@ import Table from './common/table';
 class MoviesTable extends Component {
 
     columns = [
-        { column : 'title', label: 'Title'},
+        { column : 'title', label: 'Title',
+        contant: i=> <Link to={`/movie/${i._id}`}>{i.title}</Link>
+        },
         { column : 'genre.name', label: 'Genre'},
         { column : 'numberInStock', label: 'Stock'},
         { column : 'dailyRentalRate', label: 'Rate'},

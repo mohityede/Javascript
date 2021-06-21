@@ -46,7 +46,7 @@ class App extends Component {
   render(){
     return(
       <>
-      <Navbar totalCounters = {this.state.counters.filter(c=> c.value>0).length}></Navbar>
+      {/* <Navbar totalCounters = {this.state.counters.filter(c=> c.value>0).length}></Navbar> */}
       <main className="container">
         <Counter2
           handleReset= {this.handleReset}

@@ -6,16 +6,33 @@ import reportWebVitals from './reportWebVitals';
 // import registerServiceWorker from './registerSeviceWorker'
 import 'bootstrap/dist/css/bootstrap.css';
 // import Counter2 from './components/counter2';
+import Navbar from './components/navbar';
 import 'font-awesome/css/font-awesome.css';
 import Movies from './components/movies';
+import { Switch, Route, Redirect, BrowserRouter } from 'react-router-dom';
+import Rentals from './components/rentals';
+import Costomers from './components/costomers';
+import PageNotFound from './components/common/notFound';
+import MovieForm from './components/movieForm';
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <main className="container">
-      <Movies></Movies>
+  <BrowserRouter>
+
+      <main className="container">
+      <Navbar />
+        <Switch>
+          <Route path="/movie/:id" component={MovieForm} />
+          <Route path="/costomers" component={Costomers} />
+          <Route path="/rentals" component={Rentals} />
+          <Route path="/not-found" component={PageNotFound} />
+          <Route path="/movies" exact component={Movies} />
+          <Redirect from="/" exact to="/movies" />
+          <Redirect to="/not-found" />
+        </Switch>
     </main>
-  </React.StrictMode>,
+
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

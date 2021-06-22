@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Joi from 'joi-browser';
 import Input from '../common/input';
+import g from 'joi-browser';
 
 class Form extends Component {
     state = {
@@ -38,6 +39,7 @@ class Form extends Component {
         const errors = this.validate();
 
         this.setState({ errors:errors || {} });
+
         if(errors) return;
 
         this.doSubmit();
@@ -46,7 +48,9 @@ class Form extends Component {
     validateProperty = ({name, value})=>{
         const obj = {[name]: value};
         const schema = {[name]: this.schema[name]};
+
         const {error} = Joi.validate(obj, schema);
+
         return error ? error.details[0].message : null;
 
         // OR
@@ -57,6 +61,7 @@ class Form extends Component {
 
     handleChange = ({ currentTarget: input })=>{
         const errors = {...this.state.errors};
+
         const errorMsg = this.validateProperty(input);
         if(errorMsg) errors[input.name] = errorMsg;
         else delete errors[input.name];
@@ -82,6 +87,23 @@ class Form extends Component {
                 label={label}
             />
         )
+    }
+
+    renderSelect(name,values,label){ /// values is array of options
+        const {errors, data} = this.state;
+        console.log("data in select",data)
+        return(
+        <div className="form-group">
+            <label htmlFor={name} className="form-label">{label}</label>
+            <select name={name} onChange={this.handleChange} value={data[name]} className="form-select">
+            <option value="select">Select</option>
+                {values.map(g=>
+                    <option key={g.name} value={g.name}>{g.name}</option>
+                    )}
+            </select>
+
+            { errors[name] && <div className="alert alert-danger">{errors[name]}</div> }
+        </div>)
     }
 }
 

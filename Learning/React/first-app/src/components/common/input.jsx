@@ -8,7 +8,6 @@ const Input = ({handleChange, name, label, error, ...rest}) => {
             <input
                 {...rest}
                 onChange={handleChange}
-                autoFocus
                 className="form-control"
                 name={name}
                 id={name}

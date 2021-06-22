@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
+import { Link } from 'react-router-dom';
 import { getMovies } from '../services/fakeMovieService';
 import { getGenres } from '../services/fakeGenreService';
-import Pagination from './common/pagination';
-import {paginate} from '../utils/paginate';
-import GenreList from './common/genreList';
 import MoviesTable from './moviesTable';
-import _ from 'lodash';
+import Pagination from './common/pagination';
+import GenreList from './common/genreList';
+import {paginate} from '../utils/paginate';
 
 class Movies extends Component {
     state={
@@ -77,6 +78,9 @@ class Movies extends Component {
             ></GenreList>
             </div>
             <div className="col">
+                <Link to="/movies/new" className="btn btn-primary">
+                  New Movie
+                </Link>
                 <h5> showing {dataLength} movies in database:</h5>
                 <hr></hr>
 

@@ -13,6 +13,8 @@ import { Switch, Route, Redirect, BrowserRouter } from 'react-router-dom';
 import Rentals from './components/rentals';
 import Costomers from './components/costomers';
 import PageNotFound from './components/common/notFound';
+import Login from './components/forms/login';
+import Register from './components/forms/register';
 import MovieForm from './components/movieForm';
 
 
@@ -22,6 +24,8 @@ ReactDOM.render(
       <main className="container">
       <Navbar />
         <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route path="/movie/:id" component={MovieForm} />
           <Route path="/costomers" component={Costomers} />
           <Route path="/rentals" component={Rentals} />

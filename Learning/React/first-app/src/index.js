@@ -16,7 +16,7 @@ import PageNotFound from './components/common/notFound';
 import Login from './components/forms/login';
 import Register from './components/forms/register';
 import newMovie from './components/forms/newMovie';
-import MovieForm from './components/movieForm';
+// import MovieForm from './components/movieForm';
 
 
 ReactDOM.render(
@@ -27,12 +27,12 @@ ReactDOM.render(
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          {/* <Route path="/movies/new" component={newMovie} /> */}
           <Route path="/movie/:id" component={newMovie} />
+          <Route path="/movies" exact component={Movies} />
           <Route path="/costomers" component={Costomers} />
           <Route path="/rentals" component={Rentals} />
           <Route path="/not-found" component={PageNotFound} />
-          <Route path="/movies/new" component={newMovie} />
-          <Route path="/movies" exact component={Movies} />
           <Redirect from="/" exact to="/movies" />
           <Redirect to="/not-found" />
         </Switch>

@@ -1,26 +1,61 @@
 import React, { Component } from "react";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
+import http from './services/httpService';
+import config from './config.json';
+
+// const config= {
+//     "api": "https://jsonplaceholder.typicode.com/posts"
+// }
+
 
 class App extends Component {
   state = {
     posts: []
   };
 
-  handleAdd = () => {
-    console.log("Add");
+  async componentDidMount(){
+    const res = await http.get(config.api);
+    this.setState({posts: res.data})
+  }
+
+  handleAdd = async() => {
+    const obj = {title:"how are you",body:"Im fine bro. what about you."}
+    const { data: post } = await http.post(config.api,obj);
+    const posts = [post,...this.state.posts];
+    this.setState({posts});
   };
 
-  handleUpdate = post => {
-    console.log("Update", post);
+  handleUpdate = async post => {
+    post.title = "this is updated"
+    await http.put(config.api+"/"+post.id,post)
+    const posts = [...this.state.posts]
+    const index = posts.indexOf(post);
+    posts[index]= {...post}
+    this.setState({posts})
   };
 
-  handleDelete = post => {
-    console.log("Delete", post);
+  handleDelete = async post => {
+    const originalPosts = this.state.posts
+    const posts = this.state.posts.filter(p => p.id !== post.id )
+    this.setState({posts})
+    try{
+      await http.delete("s"+config.api+"/"+post.id)
+    }
+    catch(ex){
+      if(ex.response && ex.response.status === 404){
+        alert("expected error occurs. post already deleted")
+      }
+
+      this.setState({posts:originalPosts});
+    }
   };
 
   render() {
     return (
       <React.Fragment>
+        <ToastContainer />
         <button className="btn btn-primary" onClick={this.handleAdd}>
           Add
         </button>
